@@ -11,16 +11,19 @@ public class YourAutonomous extends SequentialCommandGroup {
             /* ROOKIES, INSERT DRIVE COMMANDS HERE TO CREATE YOUR AUTON! 
              * EX: new DriveTime(parameter, parameter, parameter)
             */
-            new TurnDegrees(0.5, 90, drivetrain),
-            new DriveDistance(0.5, 4.5 ,drivetrain),
-            new TurnDegrees(-0.5, 90, drivetrain),
-            new DriveDistance(0.5, 7 , drivetrain),
-            new TurnDegrees(-0.5, 90, drivetrain), 
-            new DriveDistance(0.5, 7 , drivetrain),
-            new TurnDegrees(0.5, 90, drivetrain),
-            new DriveDistance(0.5, 4.5 ,drivetrain)
-            //turn
-            //driveArc
+            new TurnDegrees(0.5, 90, drivetrain), //makes it ready to move forward from starting position
+            new DriveDistance(0.5, 4.5 ,drivetrain), //goes forward
+            new TurnDegrees(-0.5, -90, drivetrain), //turns right(?) negative 90 degrees
+            new DriveDistance(0.5, 7 , drivetrain), //goes forward to the block
+            new TurnDegrees(-0.5, -90, drivetrain), //turns right(?) negative 90 degrees
+            new DriveDistance(0.5, 7 , drivetrain), //goes forward (down)
+            new TurnDegrees(0.5, 90, drivetrain), //turns left
+            new DriveDistance(0.5, 4.5 ,drivetrain), //goes forward
+            new TurnDegrees(0.5, 90, drivetrain), //turns left
+            new DriveDistance(0.5, 4.5 ,drivetrain), //goes forward
+            new TurnDegrees(-0.5, -90, drivetrain) //turns right(?) negative 90 degrees and gets it in place for the drive arc
+            
+           
         );
     }
 }

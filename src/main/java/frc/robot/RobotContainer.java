@@ -15,9 +15,11 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.PrintCommand;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import frc.robot.autons.ExampleAuton;
+import frc.robot.autons.YourAutonomous;
 import frc.robot.driveCommands.ArcadeDrive;
 import frc.robot.driveCommands.TankDrive;
 import frc.robot.subsystems.Drivetrain;
+import frc.robot.autons.BottomBlue;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -62,8 +64,8 @@ public class RobotContainer {
   private void configureButtonBindings() {
     // Default command is arcade drive. This will run unless another command
     // is scheduled over it.
-    // m_drivetrain.setDefaultCommand(getArcadeDriveCommand());
-    m_drivetrain.setDefaultCommand(getTankDriveCommand());
+    m_drivetrain.setDefaultCommand(getArcadeDriveCommand());
+    // m_drivetrain.setDefaultCommand(getTankDriveCommand());
 
     // Example of how to use the onboard IO
     Trigger onboardButtonA = new Trigger(m_onboardIO::getButtonAPressed);
@@ -73,6 +75,8 @@ public class RobotContainer {
 
     // Setup SmartDashboard options
     m_chooser.setDefaultOption("Example Auton", new ExampleAuton(m_drivetrain));
+    m_chooser.addOption("Your Autonomous", new YourAutonomous(m_drivetrain));
+    m_chooser.addOption("Bottom Blue", new BottomBlue(m_drivetrain));
     
     /* ROOKIES, ADD YOUR AUTONS HERE!
      * EX:
@@ -104,5 +108,5 @@ public class RobotContainer {
   public Command getTankDriveCommand() {
     return new TankDrive(
         m_drivetrain, () -> -m_controller.getRawAxis(1), () -> -m_controller.getRawAxis(0));
-  }
+      }
 }

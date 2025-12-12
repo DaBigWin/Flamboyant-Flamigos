@@ -8,7 +8,7 @@ import frc.robot.subsystems.Drivetrain;
 public class ExampleAuton extends SequentialCommandGroup {
     public ExampleAuton(Drivetrain drivetrain) {
       addCommands(
-        new DriveDistance(0.5, 10, drivetrain)
+        // new DriveArc(0.75, 0.25, drivetrain)
       );
     }
   }
